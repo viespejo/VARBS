@@ -33,7 +33,7 @@ pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 #Chroot
-curl http://raw.githubusercontent.com/viespejo/VARBS/master/chroot.sh > /mnt/chroot.sh && arch-chroot /mnt bash chroot.sh && rm /mnt/chroot.sh
+curl https://raw.githubusercontent.com/viespejo/VARBS/master/chroot.sh > /mnt/chroot.sh && arch-chroot /mnt bash chroot.sh && rm /mnt/chroot.sh
 
 cat comp > /mnt/etc/hostname
 echo "127.0.1.1   $(cat comp).localdomain $(cat comp)" >> /mnt/etc/hosts && rm comp

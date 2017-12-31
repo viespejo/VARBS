@@ -121,6 +121,8 @@ pacman --noconfirm --needed -Sy \
 	atool \
 	ntfs-3g \
  	dosfstools \
+    udisks2 \
+    udiskie \
 	transset-df \
 	htop || (red Error installing system basics. Check your internet connection and pacman keyring.)
 
@@ -277,6 +279,7 @@ cat << "EOF"
                  ||    ||     
 EOF
 
+cd /tmp
 blue Implementing temporary sudoers file...
 curl https://raw.githubusercontent.com/viespejo/VARBS/master/sudoers_tmp > /etc/sudoers 
 

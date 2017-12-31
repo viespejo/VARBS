@@ -11,9 +11,6 @@ echo "es_ES.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-# keymap
-# localectl set-x11-keymap us,es "" "" ctrl:nocaps,grp:shifts_toggle
-
 # mirrorlist
 pacman --noconfirm --needed -S reflector
 reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
@@ -25,6 +22,9 @@ systemctl start NetworkManager
 
 # Intel CPU
 pacman --noconfirm --needed -S intel-ucode
+
+# enable magic SysRq key (reisub)
+echo "1" > /etc/sysctl.d/90-sysrq.conf
 
 # remember mount the partitions that contain other systems
 #pacman --noconfirm --needed -S grub efibootmgr os-prober && grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub && grub-mkconfig -o /boot/grub/grub.cfg
