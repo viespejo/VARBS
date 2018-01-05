@@ -45,9 +45,7 @@ cat << "EOF"
 EOF
                                                                
 
-aurcheck packer yaourt i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixes-git rxvt-unicode-patched urxvt-perls urxvt-resize-font-git polybar python-pywal arc-gtk-theme papirus-icon-theme-git xss-lock-git xautolock nodejs npm lxappearance nerd-fonts-complete-mono-glyphs ttf-material-design-icons noto-fonts ttf-font-awesome || red Error with basic AUR installations...
-#Also installing i3lock, since i3-gaps was only just now installed.
-sudo pacman -S --noconfirm --needed i3lock
+aurcheck packer yaourt i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixes-git rxvt-unicode-patched urxvt-perls urxvt-resize-font-git polybar python-pywal arc-gtk-theme papirus-icon-theme-git xss-lock-git xautolock nodejs npm lxappearance nerd-fonts-complete-mono-glyphs ttf-material-design-icons noto-fonts ttf-font-awesome dunst-git i3lock || red Error with basic AUR installations...
 
 choices=$(cat /tmp/.choices)
 for choice in $choices
