@@ -2,6 +2,7 @@
 
 passwd
 
+# timezone
 ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
 hwclock --systohc

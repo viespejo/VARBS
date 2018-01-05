@@ -302,6 +302,9 @@ blue Enabling Network Manager...
 systemctl enable NetworkManager
 systemctl start NetworkManager
 
+blue Enabling NTP sync...
+timedatectl set-ntp true
+
 blue Implementing permanent sudoers file...
 curl https://raw.githubusercontent.com/viespejo/VARBS/master/sudoers > /etc/sudoers 
 
