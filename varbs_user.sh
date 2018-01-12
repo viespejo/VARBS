@@ -99,3 +99,6 @@ done
 blue Downloading config files...
 cd /home/$NAME/
 git clone https://github.com/viespejo/.dotfiles.git && cd .dotfiles && ./install
+
+blue local udev rules
+cp udev.d/90-local.rules /etc/udev/rules.d/
