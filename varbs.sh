@@ -113,6 +113,7 @@ pacman --noconfirm --needed -Sy \
 	base-devel \
 	xorg-xinit \
 	xorg-server \
+	xorg-xev \
 	compton \
 	arandr \
 	unzip \
