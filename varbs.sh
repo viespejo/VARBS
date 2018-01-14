@@ -124,6 +124,7 @@ pacman --noconfirm --needed -Sy \
  	dosfstools \
     udisks2 \
     udiskie \
+    xclip \
 	transset-df \
 	htop || (red Error installing system basics. Check your internet connection and pacman keyring.)
 
