@@ -39,6 +39,7 @@ options=(1 "Inkscape" off
 	 6 "Extra Fonts" off
 	 7 "Transmission torrent client" off
 	 8 "Music visualizers and decoration" off
+     9 "Pandoc and TeX Live (LaTeX)" off
 	 )
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 echo $choices > /tmp/.choices
@@ -234,6 +235,10 @@ do
 	    8)
 		blue Now installing visualizers and decoration...
 		pacman --noconfirm --needed -S projectm-pulseaudio cmatrix asciiquarium screenfetch
+		;;
+	    9)
+		blue Now installing Pandoc and TeX Live...
+		pacman --noconfirm --needed -S pandoc texlive-core
 		;;
     esac
 done
