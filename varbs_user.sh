@@ -105,3 +105,4 @@ cp udev.d/90-local.rules /etc/udev/rules.d/
 
 blue Creating a full suite of localized default user directories
 xdg-user-dirs-update
+mkdir Documents/Books
