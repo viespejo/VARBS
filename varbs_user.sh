@@ -47,6 +47,8 @@ EOF
 
 aurcheck packer yaourt i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixes-git rxvt-unicode-patched urxvt-perls urxvt-resize-font-git polybar python-pywal arc-gtk-theme papirus-icon-theme-git xss-lock-git xautolock nodejs npm lxappearance nerd-fonts-complete-mono-glyphs ttf-material-design-icons noto-fonts ttf-font-awesome dunst-git i3lock screenkey-git xdg-user-dirs openconnect networkmanager-openconnect wine wine_gecko wine-mono heidisql meld || red Error with basic AUR installations...
 
+aurcheck remmina libvncserver freerdp skypeforlinux-preview-bin || red Error with basic AUR installations...
+
 choices=$(cat /tmp/.choices)
 for choice in $choices
 do
@@ -99,6 +101,7 @@ done
 blue Downloading config files...
 cd /home/$NAME/
 git clone https://github.com/viespejo/.dotfiles.git && cd .dotfiles && ./install
+git clone https://github.com/viespejo/.dotfiles-local.git && cd .dotfiles-local && ./install
 
 blue Local udev rules
 cp udev.d/90-local.rules /etc/udev/rules.d/
