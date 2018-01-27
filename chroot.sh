@@ -16,6 +16,12 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 pacman --noconfirm --needed -S reflector
 reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
+# enable multilib
+multilib=$(grep -n "\[multilib\]" /etc/pacman.conf | cut -f1 -d:)
+sed -i "${multilib}s/^#//g" /etc/pacman.conf
+multilib=$(($multilib+1))
+sed -i "${multilib}s/^#//g" /etc/pacman.conf
+
 # NetworkManager
 pacman --noconfirm --needed -S networkmanager
 systemctl enable NetworkManager
