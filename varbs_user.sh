@@ -101,11 +101,12 @@ done
 blue Downloading config files...
 cd /home/$NAME/
 git clone https://github.com/viespejo/.dotfiles.git && cd .dotfiles && ./install
-git clone https://github.com/viespejo/.dotfiles-local.git && cd .dotfiles-local && ./install
-
 blue Local udev rules
 cp udev.d/90-local.rules /etc/udev/rules.d/
+cd /home/$NAME/
+git clone https://github.com/viespejo/.dotfiles-local.git && cd .dotfiles-local && ./install
 
+cd /home/$NAME/
 blue Creating a full suite of localized default user directories
 xdg-user-dirs-update
 mkdir Documents/Books
