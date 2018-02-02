@@ -116,6 +116,7 @@ pacman --noconfirm --needed -Sy \
 	xorg-server \
 	xorg-xev \
 	xorg-xkill \
+	xorg-xinput \
 	compton \
 	arandr \
 	unzip \
