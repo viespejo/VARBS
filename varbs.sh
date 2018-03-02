@@ -152,6 +152,7 @@ pacman --noconfirm --needed -Sy \
 	wireless_tools \
 	network-manager-applet \
 	networkmanager \
+  gvfs-smb \
 	w3m \
 	rsync || (red Error installing network packages. Check your internet connection and pacman keyring.)
 
