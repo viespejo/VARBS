@@ -142,6 +142,7 @@ pacman --noconfirm --needed -Sy \
 	python2-neovim \
 	tmux \
 	rofi \
+  dmenu \
 	poppler \
 	mupdf \
 	evince || (red Error installing productivity packages. Check your internet connection and pacman keyring.)
