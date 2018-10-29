@@ -11,7 +11,10 @@ pulseaudio --start && blue Pulseaudio enabled...
 #Install an AUR package manually.
 aurinstall() { curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz && tar -xvf $1.tar.gz && cd $1 && makepkg --noconfirm -si && cd .. && rm -rf $1 $1.tar.gz ;}
 
-#aurcheck runs on each of its arguments, if the argument is not already installed, it either uses packer to install it, or installs it manually.
+#Install yay manually.
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg --noconfirm -si && cd .. && rm -rf yay
+
+#aurcheck runs on each of its arguments, if the argument is not already installed, it either uses yay to install it, or installs it manually.
 aurcheck() {
 qm=$(pacman -Qm | awk '{print $1}')
 for arg in "$@"
@@ -21,9 +24,9 @@ if [[ $qm = *"$arg"* ]]; then
 else 
 	echo $arg not installed
 	blue Now installing $arg...
-	if [[ -e /usr/bin/packer ]]
+	if [[ -e /usr/bin/yay ]]
 	then
-		(packer --noconfirm -S $arg && blue $arg now installed) || red Error installing $arg.
+		(yay --noconfirm -S $arg && blue $arg now installed) || red Error installing $arg.
 	else
 		(aurinstall $arg && blue $arg now installed) || red Error installing $arg.
 	fi
@@ -45,7 +48,7 @@ cat << "EOF"
 EOF
                                                                
 
-aurcheck packer yaourt i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixes-git rxvt-unicode-patched urxvt-perls urxvt-resize-font-git polybar python-pywal arc-gtk-theme papirus-icon-theme-git xss-lock-git xautolock nodejs npm lxappearance nerd-fonts-complete-mono-glyphs ttf-material-design-icons ttf-font-awesome dunst-git i3lock screenkey-git xdg-user-dirs openconnect networkmanager-openconnect wine wine_gecko wine-mono heidisql meld || red Error with basic AUR installations...
+aurcheck i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixes-git rxvt-unicode-patched urxvt-perls urxvt-resize-font-git polybar python-pywal arc-gtk-theme papirus-icon-theme-git xss-lock-git xautolock nodejs npm lxappearance nerd-fonts-complete-mono-glyphs ttf-material-design-icons ttf-font-awesome dunst-git i3lock screenkey-git xdg-user-dirs openconnect networkmanager-openconnect wine wine_gecko wine-mono heidisql meld || red Error with basic AUR installations...
 
 aurcheck remmina libvncserver freerdp skypeforlinux-preview-bin || red Error with basic AUR installations...
 
