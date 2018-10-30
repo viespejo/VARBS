@@ -52,6 +52,9 @@ aurcheck i3-gaps zsh zsh-completions ripgrep the_silver_searcher unclutter-xfixe
 
 aurcheck remmina libvncserver freerdp skypeforlinux-preview-bin || red Error with basic AUR installations...
 
+blue Change shell...
+chsh -s /bin/zsh
+
 choices=$(cat /tmp/.choices)
 for choice in $choices
 do
