@@ -21,6 +21,7 @@ multilib=$(grep -n "\[multilib\]" /etc/pacman.conf | cut -f1 -d:)
 sed -i "${multilib}s/^#//g" /etc/pacman.conf
 multilib=$(($multilib+1))
 sed -i "${multilib}s/^#//g" /etc/pacman.conf
+pacman -Syy
 
 # NetworkManager
 pacman --noconfirm --needed -S networkmanager
@@ -34,8 +35,8 @@ pacman --noconfirm --needed -S intel-ucode
 echo "1" > /etc/sysctl.d/90-sysrq.conf
 
 # remember mount the partitions that contain other systems
-#pacman --noconfirm --needed -S grub efibootmgr os-prober
-#grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub && grub-mkconfig -o /boot/grub/grub.cfg
+pacman --noconfirm --needed -S grub efibootmgr os-prober
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub && grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman --noconfirm --needed -S dialog
 varbs() { curl -LO https://raw.githubusercontent.com/viespejo/VARBS/master/varbs.sh && bash varbs.sh ; }
