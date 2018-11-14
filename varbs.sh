@@ -141,6 +141,7 @@ pacman --noconfirm --needed -Sy \
 	python-neovim \
 	python2-neovim \
 	tmux \
+  pwgen \
 	rofi \
   dmenu \
 	poppler \
