@@ -115,6 +115,7 @@ pacman --noconfirm --needed -Sy \
 	xorg-xinit \
 	xorg-server \
 	xorg-xev \
+  xcape \
 	xorg-xkill \
 	xorg-xinput \
 	compton \
