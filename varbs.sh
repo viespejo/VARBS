@@ -115,7 +115,7 @@ pacman --noconfirm --needed -Sy \
 	xorg-xinit \
 	xorg-server \
 	xorg-xev \
-  xcape \
+	xcape \
 	xorg-xkill \
 	xorg-xinput \
 	compton \
@@ -125,10 +125,10 @@ pacman --noconfirm --needed -Sy \
 	wget \
 	atool \
 	ntfs-3g \
- 	dosfstools \
-    udisks2 \
-    udiskie \
-    xclip \
+	dosfstools \
+	udisks2 \
+	udiskie \
+	xclip \
 	transset-df \
 	htop || (red Error installing system basics. Check your internet connection and pacman keyring.)
 
