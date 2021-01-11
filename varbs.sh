@@ -139,6 +139,9 @@ pacman --noconfirm --needed -Sy \
 	ranger \
 	nemo \
 	neovim \
+	alacritty \
+	bat \
+	tig \
 	python-neovim \
 	python2-neovim \
 	tmux \
