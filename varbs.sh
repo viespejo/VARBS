@@ -141,6 +141,7 @@ pacman --noconfirm --needed -Sy \
 	neovim \
 	alacritty \
 	bat \
+	exa \
 	tig \
 	python-neovim \
 	python2-neovim \
